@@ -22,4 +22,9 @@ router.put('/:id', function(req, res) {
     restaurantController.update(req, res);
 });
 
+// DELETE /api/v1/restaurant/:id
+router.delete('/:id', function(req, res) {
+    restaurantController.delete(req, res);
+});
+
 module.exports = router;

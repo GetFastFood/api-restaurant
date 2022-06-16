@@ -38,6 +38,15 @@ let restaurantController = {
         }catch (error) {
             send.sendError(res, 500, error);
         }
+    },
+
+    async delete (req, res) {
+        try {
+            let resto = await restaurant.findByIdAndDelete(req.params.id);
+            send.sendData(res, resto);
+        }catch (error) {
+            send.sendError(res, 500, error);
+        }
     }
 }
 
