@@ -22,6 +22,15 @@ let restaurantController = {
         }
     },
 
+    async getByOwner (req, res) {
+        try {
+            let resto = await restaurant.find({owner: req.params.id});
+            send.sendData(res, resto);
+        }catch (error) {
+            send.sendError(res, 500, error);
+        }
+    },
+    
     async create (req, res) {
         try {
             let resto = await restaurant.create(req.body);
