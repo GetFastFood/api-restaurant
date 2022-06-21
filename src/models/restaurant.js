@@ -11,6 +11,7 @@ const restaurant_schema = new Schema({
     tags: Array,
     description: String,
     menus: Array,
+    article: Array,
     versionKey: false,
 });
 
